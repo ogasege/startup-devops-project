@@ -1,1 +1,1 @@
-This is the repo for the technical project
+This is the repository containing the files required to automate the creation of the infrastructure of the startup using terraform.
