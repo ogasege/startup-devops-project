@@ -1,0 +1,13 @@
+      /*#a)USE mysql;
+      b)UPDATE user SET plugin='mysql_native_password' WHERE User='root';
+      c)FLUSH PRIVILEGES;
+      d)ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'admin';
+      e)exit
+
+      5) Then to login again in mysql
+      sudo mysql -p
+      Type the Password - admin
+      6) Install unzip - sudo apt-get install unzip
+      7) To unzip - unzip filename
+      8) Change password to 'admin' in your code where database password is asked.
+      9) Don't forget to change the host to ('0.0.0.0' and port=80 ) in your main flask file.*/
