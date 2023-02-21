@@ -13,3 +13,4 @@ availability zones while the database instances will be created in 2 private sub
 
 Here's the architecture diagram:
 
+![Architectural Diagram for Startup)](https://user-images.githubusercontent.com/87014766/220373865-24821c92-9e4d-46a1-b97b-117199038347.png)
