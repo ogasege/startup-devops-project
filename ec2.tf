@@ -25,10 +25,7 @@ resource "aws_instance" "web_server_az1" {
       "sudo apt-get install -y apache2",
       "sudo systemctl start apache2",
       "sudo systemctl enable apache2",
-      "sudo apt upgrade",
-      "sudo apt install mysql-client-core-8.0",
-      "mysql --version",
-      "sudo mysql",
+      
 
     ]
   }
