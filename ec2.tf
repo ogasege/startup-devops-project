@@ -13,7 +13,7 @@ resource "aws_instance" "web_server_az1" {
   subnet_id = aws_subnet.web_server_subnet_1.id
   associate_public_ip_address = true
   provisioner "local-exec" {
-    command = "printf '\n${self.public_ip}' >> aws_hosts && aws ec2 wait instance-status-ok --instance-ids ${self.id} --region eu-west-2"
+    command = "printf '\n${self.public_ip}' >> aws_hosts && sleep 2m"
   }
   provisioner "local-exec" {
     when    = destroy
@@ -55,11 +55,11 @@ resource "aws_instance" "web_server_az2" {
   subnet_id = aws_subnet.web_server_subnet_2.id
   associate_public_ip_address = true
   provisioner "local-exec" {
-    command = "printf '\n${self.public_ip}' >> aws_hosts && aws ec2 wait instance-status-ok --instance-ids ${self.id} --region eu-west-2"
+    command = "printf '\n${self.public_ip}' >> aws_hosts1 && sleep 2m"
   }
   provisioner "local-exec" {
     when    = destroy
-    command = "sed -i '/^[0-9]/d' aws_hosts"
+    command = "sed -i '/^[0-9]/d' aws_hosts1"
   }
   provisioner "remote-exec" {
     inline = [
