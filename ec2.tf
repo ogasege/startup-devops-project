@@ -44,7 +44,7 @@ resource "aws_instance" "web_server_az1" {
 
 
 resource "aws_instance" "web_server_az2" {
-  count = 3
+  count = 4
   ami = data.aws_ami.ubuntu.id
   instance_type = var.instance_type
   key_name = aws_key_pair.deployer.id
