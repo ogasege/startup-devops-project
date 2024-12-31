@@ -1,8 +1,6 @@
 # This block creates the web servers using the "aws_instance" resource. 
 # We're using the AMI ID that we fetched earlier, setting the instance type using the "instance_type" variable, and deploying the instances in the "eu-west-2a" availability zone. 
 # We're also using a "count" parameter to create 4 instances, and we're naming each instance using the "Name" tag with a unique index number.
-#The "provisioner" block includes commands to install and start Apache on the instances using the remote-exec provisioner.
-
 
 resource "aws_instance" "web_server_az1" {
   count                       = 2
@@ -18,7 +16,6 @@ resource "aws_instance" "web_server_az1" {
   }
 }
 
-
 resource "aws_instance" "web_server_az2" {
   count                       = 2
   ami                         = data.aws_ami.ubuntu.id
@@ -31,12 +28,6 @@ resource "aws_instance" "web_server_az2" {
   tags = {
     Name = "web-server-${count.index + 3}"
   }
-}
-
-
-resource "aws_key_pair" "deployer" {
-  key_name   = "id_rsa"
-  public_key = file("${path.module}/id_rsa.pub")
 }
 
 
