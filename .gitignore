@@ -4,3 +4,4 @@
 .terraform.lock.hcl
 credentials
 id_rsa.pub
+.txt
