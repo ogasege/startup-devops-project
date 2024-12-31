@@ -5,7 +5,7 @@ variable "instance_type" {
 }
 
 variable "db_instance_names" {
-  type    = map(string)
+  type = map(string)
   default = {
     "db_instance_1" = "db_name_1"
     "db_instance_2" = "db_name_2"
@@ -14,17 +14,17 @@ variable "db_instance_names" {
 
 data "aws_ami" "ubuntu" {
 
-    most_recent = true
+  most_recent = true
 
-    filter {
-        name   = "name"
-        values = ["ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*"]
-    }
+  filter {
+    name   = "name"
+    values = ["ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*"]
+  }
 
-    filter {
-        name = "virtualization-type"
-        values = ["hvm"]
-    }
+  filter {
+    name   = "virtualization-type"
+    values = ["hvm"]
+  }
 
-    owners = ["099720109477"]
+  owners = ["099720109477"]
 }
